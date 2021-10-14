@@ -66,7 +66,7 @@
                     
                     <!-- Nav Item - Master Region -->
                     <li class="nav-item {{ Nav::isRoute('profile') }}">
-                        <a class="nav-link" href="{{ route('profile') }}">
+                        <a class="nav-link" onclick="vMasterRegion();">
                             <i class="fas fa-fw fa-user"></i>
                             <span>{{ __('Master Region') }}</span>
                         </a>
@@ -74,7 +74,7 @@
                     
                     <!-- Nav Item - Master User -->
                     <li class="nav-item {{ Nav::isRoute('profile') }}">
-                        <a class="nav-link" href="{{ route('profile') }}">
+                        <a class="nav-link" onclick="vMasterUser();">
                             <i class="fas fa-fw fa-user"></i>
                             <span>{{ __('Master User') }}</span>
                         </a>
