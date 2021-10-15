@@ -42,10 +42,10 @@
                 <hr class="sidebar-divider my-0">
                 
                 <!-- Nav Item - Beranda -->
-                <li class="">
+                <li class="nav-item {{ Nav::isRoute('home') }}">
                     <a class="nav-link" href="">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Beranda</span></a>
+                        <span>{{ __('Beranda') }}</span></a>
                     </li>
                     
                     <!-- Divider -->
@@ -53,30 +53,30 @@
                     
                     <!-- Heading -->
                     <div class="sidebar-heading">
-                        Menu Pengguna
+                        {{ __('Menu Pengguna') }}
                     </div>
                     
                     <!-- Nav Item - Master Role -->
                     <li class="nav-item">
                         <a class="nav-link" onclick="vMasterRole();">
                             <i class="fas fa-fw fa-user"></i>
-                            <span>Master Role</span>
+                            <span>{{ __('Master Role') }}</span>
                         </a>
                     </li>
                     
                     <!-- Nav Item - Master Region -->
-                    <li class="nav-item">
+                    <li class="nav-item {{ Nav::isRoute('profile') }}">
                         <a class="nav-link" onclick="vMasterRegion();">
                             <i class="fas fa-fw fa-user"></i>
-                            <span>Master Region</span>
+                            <span>{{ __('Master Region') }}</span>
                         </a>
                     </li>
                     
                     <!-- Nav Item - Master User -->
-                    <li class="nav-item">
+                    <li class="nav-item {{ Nav::isRoute('profile') }}">
                         <a class="nav-link" onclick="vMasterUser();">
                             <i class="fas fa-fw fa-user"></i>
-                            <span>Master User</span>
+                            <span>{{ __('Master User') }}</span>
                         </a>
                     </li>
                     
@@ -85,30 +85,30 @@
                     
                     <!-- Heading -->
                     <div class="sidebar-heading">
-                        Menu Mesin
+                        {{ __('Menu Mesin') }}
                     </div>
                     
                     <!-- Nav Item - Master Mesin -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
+                    <li class="nav-item {{ Nav::isRoute('profile') }}">
+                        <a class="nav-link" href="{{ route('profile') }}">
                             <i class="fas fa-fw fa-user"></i>
-                            <span>Master Mesin</span>
+                            <span>{{ __('Master Mesin') }}</span>
                         </a>
         </li>
         
         <!-- Nav Item - Aktivitas Mesin -->
-        <li class="nav-item">
-            <a class="nav-link" href="">
+        <li class="nav-item {{ Nav::isRoute('profile') }}">
+            <a class="nav-link" href="{{ route('profile') }}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>Aktivitas Mesin</span>
+                <span>{{ __('Aktivitas Mesin') }}</span>
             </a>
         </li>
         
         <!-- Nav Item - Report Mesin -->
-        <li class="nav-item">
-            <a class="nav-link" href="">
+        <li class="nav-item {{ Nav::isRoute('profile') }}">
+            <a class="nav-link" href="{{ route('profile') }}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>Report Mesin</span>
+                <span>{{ __('Report Mesin') }}</span>
             </a>
         </li>
         
@@ -275,22 +275,22 @@
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="{{ route('profile') }}">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
+                                {{ __('Profile') }}
                             </a>
                             <a class="dropdown-item" href="javascript:void(0)">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Settings
+                                {{ __('Settings') }}
                             </a>
                             <a class="dropdown-item" href="javascript:void(0)">
                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
+                                {{ __('Activity Log') }}
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
+                                {{ __('Logout') }}
                             </a>
                         </div>
                     </li>
@@ -336,16 +336,16 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{ __('Ready to Leave?') }}</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
-                <button class="btn btn-link" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                <form id="logout-form" action="" method="POST" style="display: none;">
+                <button class="btn btn-link" type="button" data-dismiss="modal">{{ __('Cancel') }}</button>
+                <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
             </div>

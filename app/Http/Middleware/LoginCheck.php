@@ -22,7 +22,6 @@ class LoginCheck
         }
         
         $user = Auth::user();
-        
         if ($user -> role_id == $role) {
             return $next($request);
         }

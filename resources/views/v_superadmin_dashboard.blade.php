@@ -111,42 +111,6 @@
     </div>
     
     <!-- Master User -->
-    <div class="master-user" id="master-user" style="display: none">
-        <div class="row">
-            <div class="col-xl-12 col-md-6 mb-4">
-                <div class="card border-left-primary shadow h-100 py-2">
-                    <div class="card-body">
-                        <table id="table-master-user" class="table">
-                            <thead>
-                                <tr>
-                                    <th>User Id</th>
-                                    <th>Kata Sandi</th>
-                                    <th>Status Data</th>
-                                    <th>Dibuat Oleh</th>
-                                    <th>Tanggal Buat</th>
-                                    <th>Diupdate Oleh</th>
-                                    <th>Tanggal Update</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($mu_data as $mu_item)
-                                <tr>
-                                    <td>{{ $mu_item->mu_id }}</td>
-                                    <td>{{ $mu_item->mu_password }}</td>
-                                    <td>{{ $mu_item->mu_status }}</td>
-                                    <td>{{ $mu_item->mu_create_user }}</td>
-                                    <td>{{ $mu_item->mu_create_date }}</td>
-                                    <td>{{ $mu_item->mu_update_user }}</td>
-                                    <td>{{ $mu_item->mu_update_date }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     
 </div>
 
@@ -158,9 +122,6 @@
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
-<script>
-    $(document).ready(function() {
-    });
 </script>
 
 @endsection
