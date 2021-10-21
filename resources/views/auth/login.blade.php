@@ -12,9 +12,9 @@
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script
+        <!-- <script
             src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script> -->
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">

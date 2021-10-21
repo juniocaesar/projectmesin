@@ -25,19 +25,29 @@ function vMasterRole() {
         $("#master-role").css("display", "block");
         $('#table_master_role').DataTable({
             "destroy": true,
-            "columns": [{
-                "width": "10%"
-            },
-            {
-                "width": "40%"
-            },
-            {
-                "width": "10%"
-            },
-                null,
-                null,
-                null,
-                null,
+            "scrollX": true,
+            "columns": [
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "30%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "10%"
+                },
             ]
         });
     });
@@ -62,8 +72,51 @@ function vMasterRegion() {
         $("#master-region").css("display", "block");
         $('#table-master-region').DataTable({
             "destroy": true,
+            "scrollX": true,
+            "columns": [
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "25%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "10%"
+                },
+                {
+                    "width": "5%"
+                },
+            ],
+            columnDefs: [
+                {
+                    targets: 7,
+                    render: function (data, type, row, meta) {
+                        let actionBtn = '<center><div class="btn-group" role="group" aria-label="Basic mixed styles example"><button type="button" class="btn btn-primary" id="editBtn"><i class="fas fa-edit"></i></button><button type="button" class="btn btn-danger" id="deleteBtn"><i class="fas fa-trash-alt"></i></button></div></center>'
+                        return actionBtn;
+                    }
+
+                }
+            ]
         });
     });
+
+    $('#table-master-region tbody').on('click', '#editBtn', function () {
+        var name = $(this).closest('tr').find('#deskripsi-region').text();
+        console.log(name);
+    });
+
 }
 
 function vMasterUser() {
@@ -77,9 +130,9 @@ function vMasterUser() {
         breadcrumbString = breadcrumbString + breadcrumbList[i];
     }
     $('#breadcrumb').html(breadcrumbString);
-    
+
     $('#page-heading').html('Master User');
-    
+
     removeMainViewSuperAdmin();
     $(function () {
         $("#master-user").css("display", "block");

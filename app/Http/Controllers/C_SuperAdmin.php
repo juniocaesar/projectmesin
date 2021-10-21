@@ -20,7 +20,7 @@ class C_SuperAdmin extends Controller
         $mr_data = DB::table('m_role')->get();
         $mre_data = DB::table('m_region')->get();
         $mu_data = DB::table('users')->get();
-
+        // echo("<script>alert('". gettype($mre_data) ."');</script>");
         return view('v_superadmin_dashboard', [
             'mr_data' => $mr_data,
             'mre_data' => $mre_data,

@@ -14,6 +14,7 @@ class AuthController extends Controller
     {
         return view('auth/login');
     }
+
     public function loginProcess(Request $request)
     {
         request()->validate(
@@ -27,17 +28,23 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->role_id == '0') {
-                // return 'authed role 0';
                 return redirect()->intended('superadmin/dashboard');
             } elseif ($user->role_id == '1') {
-                // return 'authed role 1';
                 return redirect()->intended('adminpusat/dashboard');
+            } elseif ($user->role_id == '2') {
+                return redirect()->intended('adminunit/dashboard');
+            } elseif ($user->role_id == '3') {
+                return redirect()->intended('operator/dashboard');
             }
-            // return 'authed no role';
             return redirect()->intended('/');
         }
-        // dd(User::all());
-        // dd(Auth::attempt($credentials));
-        return redirect('login')->with('error', 'Username atau password salah.');
+        return redirect('login')->with('error', 'Username atau password salah.');;
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        Auth::logout();
+        return redirect('login');
     }
 }

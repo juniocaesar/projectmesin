@@ -1,4 +1,4 @@
-@extends('layouts.v_adminpusat')
+@extends('layouts.v_adminunit')
 
 @section('main-content')
 
@@ -29,7 +29,7 @@
 </div>
 
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800" id="page-heading">Beranda Admin Pusat</h1>
+<h1 class="h3 mb-4 text-gray-800" id="page-heading">Beranda Operator</h1>
 
 <!-- Dynamic Main Content -->
 <div class="main-content" id="main-content">

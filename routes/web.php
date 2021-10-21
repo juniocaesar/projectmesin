@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('home');
 // });
 // Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -30,7 +30,11 @@ use Illuminate\Support\Facades\Auth;
 // Route::get('/superadmin/dashboard', 'C_SuperAdmin@index');
 
 Route::get('login', 'AuthController@index')->name('login');
+Route::get('/', 'AuthController@index')->name('login');
 Route::post('login_process', 'AuthController@loginProcess')->name('login_process');
+Route::get('logout', 'AuthController@logout')->name('logout');
+
+Route::post('insert_region', 'C_Region@insert')->name('insert_region');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['logincheck:0']], function(){
@@ -38,5 +42,11 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::group(['middleware' => ['logincheck:1']], function(){
         Route::get('adminpusat/dashboard', 'C_AdminPusat@index')->name('adminpusat');
+    });
+    Route::group(['middleware' => ['logincheck:2']], function(){
+        Route::get('adminunit/dashboard', 'C_AdminUnit@index')->name('adminunit');
+    });
+    Route::group(['middleware' => ['logincheck:3']], function(){
+        Route::get('operator/dashboard', 'C_Operator@index')->name('operator');
     });
 });

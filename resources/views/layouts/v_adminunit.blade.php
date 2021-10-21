@@ -50,62 +50,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Menu Pengguna
+                Menu Mesin
             </div>
 
             <!-- Nav Item - Master Role -->
             <li class="nav-item">
                 <a class="nav-link" onclick="vMasterRole();">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>Master Role</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Master Region -->
-            <li class="nav-item">
-                <a class="nav-link" onclick="vMasterRegion();">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Master Region</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Master User -->
-            <li class="nav-item">
-                <a class="nav-link" onclick="vMasterUser();">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Master User</span>
-                </a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Menu Mesin
-            </div>
-
-            <!-- Nav Item - Master Mesin -->
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-user"></i>
                     <span>Master Mesin</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Aktivitas Mesin -->
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Aktivitas Mesin</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Report Mesin -->
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Report Mesin</span>
                 </a>
             </li>
 
